@@ -1,10 +1,9 @@
 @echo off
 echo Push all new(modified) file(s) to github....
 git add *
-if %1 == "" (
+IF %1 == "" (
 git commit -m 1
-)
-else (
+) ELSE (
 git commit -m %1
 )
 git push
