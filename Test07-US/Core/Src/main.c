@@ -63,10 +63,10 @@ static void MX_TIM5_Init(void);
 
 void myDelay(int us)  // us:microsecond
 {
-	volatile int t1 = htim5.Instance->CNT;  // ì´ˆê¸°ï¿??
+	volatile int t1 = htim5.Instance->CNT;  // save current value
 	while(1)
 	{
-		int t2 = htim5.Instance->CNT;  // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ CNT ï¿??
+		int t2 = htim5.Instance->CNT;  // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ CNT ï¿½??
 		if(t2 - t1 > us) break;
 	}
 	//while(htim5.Instance->CNT - t1 < us);
